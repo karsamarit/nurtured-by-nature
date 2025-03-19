@@ -1,5 +1,6 @@
 :root{
     --theme-color:#F8DC75;
+    --secondary-color:#FFF9E6;
     --text-black:#25272b;
     --font-ibm:"IBM Plex Sans", sans-serif;
     --font-jakarta: "Plus Jakarta Sans", sans-serif;
@@ -398,24 +399,44 @@ nav{
 .mission{
     position: relative;
     z-index: 1;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-image: url("./image/dairyfarm.jpg");
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
-.mission::before{
+/* .mission::before{
     position: absolute;
     content: '';
-    width: 70%;
+    width: 50%;
     height: 100%;
     background-color: #FFF9E6;
     top: 0;
     left: 0;
     z-index: -1;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+} */
+.mission_inner {
+    background: rgba(255, 255, 255, 0.2); /* Light transparent background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    padding: 20px;
+    border-radius: 15px; /* Soft rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional subtle border */
 }
+
 .mission p{
     font-size: 25px;
     font-style: italic;
     margin-top: 1rem;
+    color: var(--theme-color);
+    font-weight: bold;
+}
+.mission h3{
+     color: var(--secondary-color);
 }
 .usp{
     padding-top: 50px;
@@ -429,6 +450,11 @@ nav{
 }
 .newUsp .col .col_inner{
     padding: 4rem;
+}
+.newUsp .col img{
+    max-height: 590px;
+    object-fit: cover;
+    object-position: 50% 50%;
 }
 .content-card {
     /* background: #F8DC75; */
@@ -457,13 +483,15 @@ nav{
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
 }
 .usp h5,.newUsp .col .col_inner h5{
-    font-size: 28px;
+    font-size: 42px;
     font-weight: bold;
     margin-bottom: .5rem;
+    font-family: var(--font-jakarta);
 }
 .usp p,.newUsp .col .col_inner p{
     margin-bottom: 25px;
     font-size: 18px;
+    max-width: 430px;
 }
 .col-margin{
     margin-bottom: 90px;
@@ -539,4 +567,14 @@ nav{
 }
 .social-icons a:hover {
     color: #ff9f43;
+}
+.col-header{
+    background: linear-gradient(to left, var(--theme-color), var(--secondary-color));
+    padding: 20px;
+    text-align: center;
+}
+.col-header h4{
+    font-family: var(--font-jakarta);
+    font-weight: 700;
+    font-size: 20px;
 }
