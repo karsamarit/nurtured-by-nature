@@ -18,19 +18,23 @@
 
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 </head>
 
 <body>
   <!-- Header -->
   <nav class="navbar navbar-expand-sm">
-    <div class="container-fluid">
+    <div class="container-fluid position-relative">
       <a class="navbar-brand" href="./index.html">Karsamrit</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <button class="d-md-none d-block toggler-button" id="sidebarCollapse" type="button">
+        <div class="bar-parents">
+           <div class="bar1"></div>
+           <div class="bar2"></div>
+           <div class="bar3"></div>
+        </div>
+     </button>
+      <div class="collapse navbar-collapse mobile-nav" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -38,23 +42,28 @@
           <li class="nav-item">
             <a class="nav-link" href="#">FAQ</a>
           </li>
-        </ul>
-        <ul class="d-flex align-items-center ctaBtns">
-          <li>
-            <span class="position-relative" id="cartIcon">
-              <img src="./assets/image/bag.png" alt="cart">
-              <span class="cart_count">
-                0
-              </span>
-            </span>
-          </li>
-          <li>
-            <a href="#" class="btn btnPrimary">
+          <li class="nav-item d-md-none d-block">
+            <a href="./buy_now.html" class="btn btnPrimary">
               Buy Now
             </a>
           </li>
         </ul>
       </div>
+      <ul class="d-flex align-items-center ctaBtns">
+        <li class="mobileView">
+          <span class="position-relative" id="cartIcon">
+            <img src="./assets/image/bag.png" alt="cart">
+            <span class="cart_count">
+              0
+            </span>
+          </span>
+        </li>
+        <li class="d-md-block d-none">
+          <a href="./buy_now.html" class="btn btnPrimary">
+            Buy Now
+          </a>
+        </li>
+      </ul>
     </div>
   </nav>
   <!-- /Header -->
@@ -319,6 +328,17 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+</script>
+<script>
+  $(document).ready(function() {
+         $('#sidebarCollapse, #closeMenu, #side-click-close,.goService').on('click', function() {
+            $('#sidebarCollapse, #navbarNav, #closeMenu,  #side-click-close').toggleClass(
+               'active');
+            $('#overlay_menu').toggleClass('bg-body');
+            $('body').toggleClass('stop-scroll');
+            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+         });
+    });
 </script>
 
 </body>

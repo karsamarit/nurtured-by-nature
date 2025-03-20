@@ -245,6 +245,32 @@ nav{
 #closeSidebar{
     cursor: pointer;
 }
+.bar1, .bar2, .bar3 {
+    width: 26px;
+    height: 2px;
+    background: transparent -o-linear-gradient(200deg, var(--text-black) var(--text-black) 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(250deg, var(--text-black) 0%, var(--text-black) 100%) 0% 0% no-repeat padding-box;
+    margin: 6px 0;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+#sidebarCollapse {
+    /* width: 40px; */
+    z-index: 1024;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: ease-in 0.1s;
+    -o-transition: ease-in 0.1s;
+    transition: ease-in 0.1s;
+}
 /* ========Start Buttons======= */
 .btnPrimary {
     background-color: var(--theme-color);
@@ -1099,5 +1125,147 @@ nav{
     .section-title::after {
       right: 25%;
     } */
+  }
+  @media screen and (max-width:767px){
+    .container-fluid{
+    padding-left: 15px;
+    padding-right: 15px;
+    }
+    .mobile-nav {
+        width: 50%;
+        position: fixed;
+        right: -100%;
+        top: 0;
+        background: #fff;
+        z-index: 999;
+        -webkit-transition: opacity .3s linear, right .3s ease-out;
+        -o-transition: opacity .3s linear, right .3s ease-out;
+        transition: opacity .3s linear, right .3s ease-out;
+        display: block;
+        }
+        .mobile-nav.active {
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+         }
+         #navbarNav {
+         display: block;
+         background-color: var(--secondary-color);
+         }
+         .navbar-nav{
+            align-items: center;
+            padding-top: 4rem;
+         }
+         .bar2 {
+            margin-left: auto;
+            width: 20px;
+                -webkit-transition: 1 opacity;
+           -o-transition: 1s opacity;
+           -webkit-transition: 1s opacity;
+           transition: 1s opacity;
+            }
+            #sidebarCollapse.active .bar2 {
+           opacity: 0;
+            }
+            #sidebarCollapse.active div.bar3 {
+           -webkit-transform: rotate(45deg) translate(-5px,-3px);
+           -ms-transform: rotate(45deg) translate(-5px,-3px);
+           transform: rotate(45deg) translate(-5px,-3px);
+           width: 26px;
+           }
+           #sidebarCollapse.active .bar1 {
+           -webkit-transform: rotate(-45deg) translate(-9px,6px);
+           -ms-transform: rotate(-45deg) translate(-9px,6px);
+           transform: rotate(-45deg) translate(-9px,6px);
+          }
+    .navbar .navbar-nav .nav-link{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .sideBar{
+        width: 50%;
+    }
+    .sideBar.open{
+        width: 80%;
+    }
+    .ctaBtns{
+        position: absolute;
+        top: 6px;
+        right: 72px;
+    }
+    .hero_section h1{
+        font-size: 28px;
+    }
+    .hero_section h5{
+        font-size: 18px;
+    }
+    .hero_section p{
+        font-size: 14px;
+    }
+    .title_text,.section-title{
+        font-size: 26px;
+    }
+    .content-section{
+        flex-wrap: wrap;
+    }
+    .content-box{
+        padding: 20px;
+    }
+    .product-card{
+        width: 97%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .mission p{
+        font-size: 15px;
+    }
+    .newUsp .col{
+        flex: unset;
+    }
+    .newUsp .col .col_inner{
+        padding: 2rem;
+    }
+    .team-container{
+        flex-wrap: wrap;
+    }
+    .section-title::before, .section-title::after{
+        content: none;
+    }
+    .usp h5, .newUsp .col .col_inner h5{
+        font-size: 35px;
+    }
+    .socailLinks{
+        margin-bottom: 2rem;
+    }
+    .hero_section .container-fluid::before{
+        bottom: -15px;
+    }
+    .thumbnail-wrapper{
+        width: 100%;
+        overflow-x: auto;
+    }
+    .main-image img{
+        width: 100%;
+    }
+    .main-image{
+        padding-top: 0;
+        margin-bottom: 0;
+    }
+    .product-details{
+        padding: 0;
+    }
+    .price_display{
+        margin: 5px 0 10px 0;
+    }
+    .product-details .prod_desc{
+        margin-bottom: 10px;
+    }
+    .description p{
+        font-size: 14px;
+    }
+    p,address{
+        font-size: 14px;
+    }
   }
   
