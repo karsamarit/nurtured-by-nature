@@ -41,7 +41,7 @@
         </ul>
         <ul class="d-flex align-items-center ctaBtns">
           <li>
-            <span class="position-relative">
+            <span class="position-relative" id="cartIcon">
               <img src="./assets/image/bag.png" alt="cart">
               <span class="cart_count">
                 0
@@ -58,6 +58,24 @@
     </div>
   </nav>
   <!-- /Header -->
+  <!-- Sidebar Cart -->
+   <div id="overlay">
+   </div>
+   <div class="sideBar">
+      <div class="sideBarHeader d-flex align-items-center justify-content-between">
+         <h3>Cart <span>(0 items )</span></h3>
+         <span id="closeSidebar">
+            <img src="./assets/image/close.png" width="25" alt="">
+         </span>
+      </div>
+      <!-- If Empty  -->
+      <div class="emptyDiv">
+         <img src="./assets/image/emptycart.png" alt="">
+        Your cart is empty.
+      </div>
+      <!-- /If Empty  -->
+   </div>
+  <!--/ Sidebar Cart -->
   <main>
     <section class="hero_section">
       <div class="container-fluid">
@@ -584,6 +602,31 @@
   }
 });
 
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const cartIcon = document.getElementById("cartIcon");
+    const sideBar = document.querySelector(".sideBar");
+    const overlay = document.getElementById("overlay");
+    const closeSidebar = document.getElementById("closeSidebar");
+
+    // Function to open sidebar and overlay
+    function openSidebar() {
+        sideBar.classList.add("open");
+        overlay.classList.add("show");
+    }
+
+    // Function to close sidebar and overlay
+    function closeSidebarFunc() {
+        sideBar.classList.remove("open");
+        overlay.classList.remove("show");
+    }
+
+    // Event Listeners
+    cartIcon.addEventListener("click", openSidebar);
+    closeSidebar.addEventListener("click", closeSidebarFunc);
+    overlay.addEventListener("click", closeSidebarFunc);
+});
   </script>
 </body>
 

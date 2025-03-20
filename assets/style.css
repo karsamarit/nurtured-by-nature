@@ -192,6 +192,59 @@ nav{
      font-size: 30px;
      font-weight: 600;
 }
+.sideBar{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 420px;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    transition: right 0.4s ease-in-out;
+    z-index: 1000;
+}
+.sideBarHeader{
+    width: 100%;
+    padding: 16px 10px;
+    background-color: var(--secondary-color);
+}
+.sideBarHeader h3{
+    font-size: 20px;
+    font-weight: bold;
+}
+.sideBarHeader h3 span{
+    font-size: 15px;
+}
+.emptyDiv{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    color: var(--text-black);
+    text-align: center;
+}
+#overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 98;
+    cursor: pointer;
+    display: none;
+}
+.sideBar.open {
+    right: 0;
+}
+
+#overlay.show {
+    display: block;
+}
+#closeSidebar{
+    cursor: pointer;
+}
 /* ========Start Buttons======= */
 .btnPrimary {
     background-color: var(--theme-color);
@@ -412,17 +465,16 @@ nav{
     background-size: cover;
     background-attachment: fixed;
 }
-/* .mission::before{
+.mission::before{
     position: absolute;
     content: '';
-    width: 50%;
+    width: 100%;
     height: 100%;
-    background-color: #FFF9E6;
+    background-color: rgba(0, 0, 0, 0.5);
     top: 0;
     left: 0;
     z-index: -1;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-} */
+}
 .mission_inner {
     background: rgba(255, 255, 255, 0.2); /* Light transparent background */
     backdrop-filter: blur(10px); /* Blur effect */
@@ -436,7 +488,7 @@ nav{
     font-size: 25px;
     font-style: italic;
     margin-top: 1rem;
-    color: var(--theme-color);
+    color: var(--secondary-color);
     font-weight: bold;
 }
 .mission h3{
