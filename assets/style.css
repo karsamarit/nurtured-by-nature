@@ -1208,6 +1208,7 @@ nav{
     }
     .content-section{
         flex-wrap: wrap;
+        flex-direction: column;
     }
     .content-box{
         padding: 20px;
