@@ -364,6 +364,30 @@ document.addEventListener("DOMContentLoaded", function () {
             $('a[aria-expanded=true]').attr('aria-expanded', 'false');
          });
     });
+    document.addEventListener("DOMContentLoaded", function () {
+    let navbar = document.querySelector(".navbar");
+    let lastScrollY = window.scrollY;
+    let isFixed = false;
+
+    window.addEventListener("scroll", function () {
+        let currentScrollY = window.scrollY;
+
+        if (currentScrollY < lastScrollY && currentScrollY > 50) {
+            if (!isFixed) {
+                navbar.classList.add("fixed-nav");
+                setTimeout(() => navbar.classList.add("visible"), 10);
+                isFixed = true;
+            }
+        } else {
+            if (isFixed) {
+                navbar.classList.remove("visible");
+                setTimeout(() => navbar.classList.remove("fixed-nav"), 300);
+                isFixed = false;
+            }
+        }
+        lastScrollY = currentScrollY;
+       });
+    });
 </script>
 
 </body>
