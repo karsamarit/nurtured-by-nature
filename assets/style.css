@@ -883,7 +883,20 @@ nav{
     align-items: center;
     width: 50px;
     height: 50px;
-    border: 1px solid var(--theme-color);
+    border: 1px solid  #f2f2f2;
+    background-color: #ffffff;
+    transition: 0.35s ease-in;
+  }
+  .socailLinks li a:hover{
+    background-color: var(--theme-color);
+  }
+  .socailLinks li a img{
+    width: 25px;
+    transform: scale(1);
+    transition: 0.35s ease-in;
+  }
+  .socailLinks li a:hover img{
+    transform: scale(1.1);
   }
   .product-image-box {
     position: relative;
@@ -1099,6 +1112,13 @@ nav{
     font-family: var(--font-jakarta);
     font-weight: bold;
     margin-bottom: 20px;
+  }
+  .footer_links li{
+    margin-bottom: 1rem;
+  }
+  .footer_links li a{
+    color: var(--text-black);
+    text-decoration: none;
   }
   
   /* media query  */
